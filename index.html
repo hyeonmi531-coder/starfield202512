@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스타필드</title>
+
+    <!-- 제이쿼리 불러오기 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 테일윈드 불러오기 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- DaisyUI 불러오기 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- 폰트어썸 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- 스와이퍼 불러오기 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- 공통 js 연결 -->
+    <script defer src="js/script.js"></script>
+
+    <!-- 공통 css 연결 -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- site-wrap : 전체 사이트를 감싸는 용도 -->
+    <div class="site-wrap">
+      <!-- 기존 pc 헤더 -->
+      <header class="header-top-bar fixed flex w-full z-[40]">
+        <div class="con h-full flex flex-col items-center py-8">
+          <h1 class="logo-box">
+            <a href="#" class="logo flex items-center justify-center h-full">
+              <img src="./assets/images/logo.png" class="block" alt="로고" />
+            </a>
+          </h1>
+          <!-- 날씨 영역-->
+          <div class="weather-box flex font-Pretendard">
+            <aside class="weather-wrap flex items-center w-full">
+              <div class="temperature">
+                <div class="weather-icon">
+                  <img src="./assets/images/icon_pcWeg1.png" alt="날씨아이콘" />
+                </div>
+              </div>
+              <div class="today flex flex-col">
+                <span class="date">11월 26일&nbsp;수요일</span>
+                <span class="operatingHour">
+                  <span class="tit">운영시간</span>
+                  <span class="time">10:00~22:00</span>
+                </span>
+              </div>
+            </aside>
+          </div>
+          <!-- 로그인 영역	-->
+          <div class="customer-box flex">
+            <div class="customer-wrap flex items-center">
+              <div class="login">로그인</div>
+              <span class="bar-1"></span>
+              <div class="invest">투자정보</div>
+              <span class="bar-2"></span>
+              <div class="search">
+                <img src="./assets/images/btn_pcSearchOpen.png" alt="돋보기" />
+              </div>
+            </div>
+          </div>
+          <!-- 메인메뉴 리스트 -->
+          <nav class="menu-box">
+            <div class="menu-inner w-full">
+              <ul class="menu-list grid">
+                <li class="menu-list__item"><a href="#">스타필드 하남</a></li>
+                <li class="menu-list__item"><a href="#">핫플레이스</a></li>
+                <li class="menu-list__item"><a href="#">엔터테인먼트</a></li>
+                <li class="menu-list__item">
+                  <a href="#">레스토랑&amp;카페</a>
+                </li>
+                <li class="menu-list__item"><a href="#">이벤트&amp;혜택</a></li>
+                <li class="menu-list__item"><a href="#">고객센터</a></li>
+              </ul>
+            </div>
+
+            <!-- 메가메뉴 시작 -->
+            <!-- 공통 메가메뉴 : 한 덩어리 사용  -->
+            <div class="mega-menu">
+              <div class="mega-inner w-full grid grid-cols-6">
+                <!-- 1열 : 스타필드 하남 -->
+                <ul class="mega-col">
+                  <li><a href="#">점포 소개</a></li>
+                  <li><a href="#">층별안내</a></li>
+                  <li><a href="#">카테고리 안내</a></li>
+                  <li><a href="#">편의시설</a></li>
+                  <li><a href="#">오시는길</a></li>
+                  <li><a href="#">주차안내</a></li>
+                  <li><a href="#">대관안내</a></li>
+                  <li><a href="#">공간 컨텐츠 제휴</a></li>
+                </ul>
+
+                <!-- 2열 : 핫플레이스 -->
+                <ul class="mega-col">
+                  <li><a href="#">해외유명브랜드</a></li>
+                  <li><a href="#">신세계백화점</a></li>
+                  <li><a href="#">트레이더스 홀세일 클럽</a></li>
+                  <li><a href="#">일렉트로마트</a></li>
+                  <li><a href="#">토이킹덤</a></li>
+                  <li><a href="#">몰리스 펫샵</a></li>
+                  <li><a href="#">한샘</a></li>
+                  <li><a href="#">자동차/모빌리티</a></li>
+                </ul>
+
+                <!-- 3열 : 엔터테인먼트 -->
+                <ul class="mega-col">
+                  <li><a href="#">아쿠아필드</a></li>
+                  <li><a href="#">스몰</a></li>
+                  <li><a href="#">메가박스</a></li>
+                  <li><a href="#">영풍문고</a></li>
+                  <li><a href="#">펫파크</a></li>
+                </ul>
+
+                <!-- 4열 : 레스토랑 & 카페 -->
+                <ul class="mega-col">
+                  <li><a href="#">고메스트리트</a></li>
+                  <li><a href="#">잇토피아</a></li>
+                </ul>
+
+                <!-- 5열 : 이벤트 & 혜택 -->
+                <ul class="mega-col">
+                  <li><a href="#">이벤트</a></li>
+                  <li><a href="#">쇼핑 혜택</a></li>
+                  <li><a href="#">사은행사</a></li>
+                  <li><a href="#">제휴카드</a></li>
+                  <li><a href="#">쿠폰</a></li>
+                </ul>
+
+                <!-- 6열 : 고객센터 -->
+                <ul class="mega-col">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">고객문의</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- 메가메뉴 끝 -->
+      </header>
+      <!-- 스크롤시 바뀌는 헤더-->
+      <div class="new-header flex w-full fixed z-[40]">
+        <div class="con flex items-center h-full justify-between">
+          <h1 class="logo-box flex items-center">
+            <a href="#" class="logo flex items-center justify-center h-full">
+              <img src="./assets/images/logo.png" alt="스크롤 왼쪽로고" />
+            </a>
+          </h1>
+          <nav class="menu-box">
+            <div class="menu-inner">
+              <ul class="menu-list grid">
+                <li class="menu-list__item"><a href="#">스타필드 하남</a></li>
+                <li class="menu-list__item"><a href="#">핫플레이스</a></li>
+                <li class="menu-list__item"><a href="#">엔터테인먼트</a></li>
+                <li class="menu-list__item">
+                  <a href="#">레스토랑&amp;카페</a>
+                </li>
+                <li class="menu-list__item"><a href="#">이벤트&amp;혜택</a></li>
+                <li class="menu-list__item"><a href="#">고객센터</a></li>
+              </ul>
+            </div>
+
+            <!-- 메가메뉴 시작 -->
+            <!-- 공통 메가메뉴 : 한 덩어리 사용  -->
+            <div class="mega-menu">
+              <div class="mega-inner grid grid-cols-6">
+                <!-- 1열 : 스타필드 하남 -->
+                <ul class="mega-col">
+                  <li><a href="#">점포 소개</a></li>
+                  <li><a href="#">층별안내</a></li>
+                  <li><a href="#">카테고리 안내</a></li>
+                  <li><a href="#">편의시설</a></li>
+                  <li><a href="#">오시는길</a></li>
+                  <li><a href="#">주차안내</a></li>
+                  <li><a href="#">대관안내</a></li>
+                  <li><a href="#">공간 컨텐츠 제휴</a></li>
+                </ul>
+
+                <!-- 2열 : 핫플레이스 -->
+                <ul class="mega-col">
+                  <li><a href="#">해외유명브랜드</a></li>
+                  <li><a href="#">신세계백화점</a></li>
+                  <li><a href="#">트레이더스 홀세일 클럽</a></li>
+                  <li><a href="#">일렉트로마트</a></li>
+                  <li><a href="#">토이킹덤</a></li>
+                  <li><a href="#">몰리스 펫샵</a></li>
+                  <li><a href="#">한샘</a></li>
+                  <li><a href="#">자동차/모빌리티</a></li>
+                </ul>
+
+                <!-- 3열 : 엔터테인먼트 -->
+                <ul class="mega-col">
+                  <li><a href="#">아쿠아필드</a></li>
+                  <li><a href="#">스몰</a></li>
+                  <li><a href="#">메가박스</a></li>
+                  <li><a href="#">영풍문고</a></li>
+                  <li><a href="#">펫파크</a></li>
+                </ul>
+
+                <!-- 4열 : 레스토랑 & 카페 -->
+                <ul class="mega-col">
+                  <li><a href="#">고메스트리트</a></li>
+                  <li><a href="#">잇토피아</a></li>
+                </ul>
+
+                <!-- 5열 : 이벤트 & 혜택 -->
+                <ul class="mega-col">
+                  <li><a href="#">이벤트</a></li>
+                  <li><a href="#">쇼핑 혜택</a></li>
+                  <li><a href="#">사은행사</a></li>
+                  <li><a href="#">제휴카드</a></li>
+                  <li><a href="#">쿠폰</a></li>
+                </ul>
+
+                <!-- 6열 : 고객센터 -->
+                <ul class="mega-col">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">고객문의</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div class="search flex items-center">
+            <img src="./assets/images/btn_pcSearchOpen.png" alt="돋보기" />
+          </div>
+        </div>
+      </div>
+      <!-- mobile 헤더	-->
+      <header class="mobile-top-bar flex w-full fixed">
+        <div class="con flex items-center justify-between">
+          <div class="mobile-top-bar__left flex items-center">
+            <button id="mobile-menu-btn" class="hamburger mobile-icon-btn">
+              <a class="mobile-icon-wrap">
+                <img
+                  src="./assets/images/btn_megaMenuOpen.png"
+                  alt="모바일 메뉴"
+                  class="mobile-icon"
+                />
+                <span class="mobile-label">메뉴</span>
+              </a>
+            </button>
+          </div>
+          <div class="mobile-top-bar__mid flex items-center justify-center">
+            <h1 class="logo-box flex items-center justify-center">
+              <a
+                href="#"
+                class="mobile-logo flex items-center justify-center h-full"
+              >
+                <img src="./assets/images/logo.png" class="block" alt="로고" />
+              </a>
+            </h1>
+          </div>
+          <div class="mobile-top-bar__right flex">
+            <div class="util-wrap">
+              <ul class="flex h-full items-center">
+                <li class="mobile-icon-btn">
+                  <a href="#">
+                    <img
+                      class="mobile-icon"
+                      src="./assets/images/btn_mobileSearchOpen.png"
+                      alt="모바일 돋보기"
+                    />
+                    <span class="mobile-label">검색</span>
+                  </a>
+                </li>
+                <li class="mobile-icon-btn">
+                  <a href="#">
+                    <img
+                      class="mobile-icon"
+                      src="./assets/images/btn_storeAreaOpen.png"
+                      alt="스토어"
+                    />
+                    <span class="mobile-label store">점포선택</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- 모바일 아코디언 메뉴 -->
+      <div class="mobile-side-bar fixed inset-0 z-999" id="mobile-side-bar">
+        <div class="side-bar-content-box" id="side-bar-content">
+          <div class="mobile-menu-content flex flex-col h-full">
+            <div
+              class="mobile-menu__topBar flex items-center flex-shrink-0 h-[75px] border-b py-3 px-3 relative bg-[#fff]"
+            >
+              <div class="mobile-operatingHour">
+                <span class="tit">
+                  <span class="store">하남점</span>
+                  <span>운영시간</span>
+                </span>
+                <span class="hour">10:00~22:00</span>
+              </div>
+              <div class="mobile-weather">
+                <span class="weather-icon">
+                  <img
+                    src="./assets/images/icon_mobileWeg1.png"
+                    alt="모바일 날씨맑음"
+                  />
+                </span>
+                <span class="temperature">5.0ºC</span>
+              </div>
+            </div>
+            <div
+              class="mobile-menu__header flex items-center justify-center flex-shrink-0 h-[100px] border-b py-3 px-3 relative bg-[#40352a]"
+            >
+              <div
+                class="mobile-menu-close-btn w-[40px] h-[40px]"
+                id="close-btn"
+              >
+                <div class="absolute w-full h-1/5 bg-white"></div>
+                <div class="absolute w-full h-1/5 bg-white"></div>
+              </div>
+              <div class="mobile-info-wrap">
+                <button type="button" class="btn-Login">로그인</button>
+              </div>
+            </div>
+            <div
+              class="mobile-menu__body flex items-center justify-center overflow-y-auto bg-[#fff]"
+            >
+              <nav class="mobile-menu">
+                <!-- 				ul.depth1>li*10>a[href="#"]{1차메뉴아이템$}+ul.depth2>li*5>a[href="#"]{2차메뉴아이템$}+ul.depth3>li*5>a[href="#"]{3차메뉴아이템$} -->
+                <ul class="depth1">
+                  <li>
+                    <a href="#">스타필드 하남</a>
+                    <ul class="depth2">
+                      <li><a href="#">점포 소개</a></li>
+                      <li><a href="#">층별안내</a></li>
+                      <li><a href="#">카테고리 안내</a></li>
+                      <li><a href="#">편의시설</a></li>
+                      <li><a href="#">오시는길</a></li>
+                      <li><a href="#">주차안내</a></li>
+                      <li><a href="#">대관안내</a></li>
+                      <li><a href="#">공간 컨텐츠 제휴</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">핫플레이스</a>
+                    <ul class="depth2">
+                      <li><a href="#">해외유명브랜드</a></li>
+                      <li><a href="#">신세계백화점</a></li>
+                      <li><a href="#">트레이더스 홀세일 클럽</a></li>
+                      <li><a href="#">일렉트로마트</a></li>
+                      <li><a href="#">토이킹덤</a></li>
+                      <li><a href="#">몰리스 펫샵</a></li>
+                      <li><a href="#">한샘</a></li>
+                      <li><a href="#">자동차/모빌리티</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">엔터테인먼트</a>
+                    <ul class="depth2">
+                      <li><a href="#">아쿠아필드</a></li>
+                      <li><a href="#">스몹</a></li>
+                      <li><a href="#">메가박스</a></li>
+                      <li><a href="#">영풍문고</a></li>
+                      <li><a href="#">펫파크</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">레스토랑&카페</a>
+                    <ul class="depth2">
+                      <li><a href="#">고메스트리트</a></li>
+                      <li><a href="#">잇토피아</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">이벤트&혜택</a>
+                    <ul class="depth2">
+                      <li><a href="#">이벤트</a></li>
+                      <li><a href="#">쇼핑 혜택</a></li>
+                      <li><a href="#">사은행사</a></li>
+                      <li><a href="#">제휴카드</a></li>
+                      <li><a href="#">쿠폰</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">고객센터</a>
+                    <ul class="depth2">
+                      <li><a href="#">FAQ</a></li>
+                      <li><a href="#">공지사항</a></li>
+                      <li><a href="#">고객문의</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 섹션 슬라이드 : 1  -->
+      <section class="section-1">
+        <!-- pc	-->
+        <div class="pc">
+          <div class="inner max-[1720px] h-[640px]">
+            <div class="swiper h-full">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-1">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20250723051346752248.jpg"
+                      alt="스타필드 신한카드혜택"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-2">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20250701103906115276.jpg"
+                      alt="멤버십 리뉴얼"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-3">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20251121112023176557.jpg"
+                      alt="듀베티카"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-4">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20251124092101327250.jpg"
+                      alt="오픈 브랜드"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-5">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20250701103906115276.jpg"
+                      alt="멤버십 리뉴얼"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-6">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20251111113248883385.jpg"
+                      alt="메리 브롤리마스"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-7">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20251119113744974133.jpg"
+                      alt="신지현 개인전"
+                    />
+                  </a>
+                </div>
+                <div class="swiper-slide swiper-slide-8">
+                  <a href="#">
+                    <img
+                      src="./assets/images/IM20251128095313084513.jpg"
+                      alt="지마켓 페스티벌"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--  navigation buttons -->
+            <div class="swiper-button-prev main-swiper-btn"></div>
+            <div class="swiper-button-next main-swiper-btn"></div>
+
+            <div class="swiper-pagination-box">
+              <div class="swiper-pagination main-swiper-pagination"></div>
+              <span class="bar"></span>
+              <div class="swiper-pagination-btn-control">
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- mobile	-->
+        <div class="mobile">
+          <div class="mobile-section-1 w-full h-[680px]">
+            <div class="inner mobile-inner h-full">
+              <div class="mobile-sectionBox">
+                <h1>스타필드 하남</h1>
+                <a href="#">모바일 웹사이트 바로가기 ></a>
+              </div>
+              <div class="mobile-bg-img w-full h-full"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 섹션 : 2  -->
+      <section class="section-2">
+        <div class="content-wrap">
+          <div class="content-header">
+            <h2 class="content-title">at STARFIELD HANAM</h2>
+            <p class="content-text">스타필드 하남의 이벤트&쿠폰</p>
+          </div>
+          <div class="grid-event font-Pretendard">
+            <div class="grid-event-item">
+              <div class="grid-list">
+                <a href="#" class="img-box">
+                  <img
+                    src="./assets/images/IM20250729101746356388.jpg"
+                    alt="12월 브랜드행사"
+                  />
+                  <article class="grid-text">
+                    <p class="title">스타필드 하남 12월의 브랜드 행사</p>
+                    <p class="des">12.01(월)-12.31(수)</p>
+                  </article>
+                </a>
+              </div>
+              <div class="grid-list">
+                <a href="#" class="img-box">
+                  <img
+                    src="./assets/images/IM20250729101755537182.jpg"
+                    alt="12월이벤트혜택"
+                  />
+                  <article class="grid-text">
+                    <p class="title">스타필드 하남 12월의 이벤트&혜택</p>
+                    <p class="des">12.01(월)-12.31(수)</p>
+                  </article>
+                </a>
+              </div>
+              <div class="grid-list">
+                <a href="#" class="img-box">
+                  <img
+                    src="./assets/images/IM20250729101803154577.jpg"
+                    alt="신규 오픈 브랜드"
+                  />
+                  <article class="grid-text">
+                    <p class="title">신규 오픈 브랜드</p>
+                    <p class="des">12.01(월)-12.31(수)</p>
+                  </article>
+                </a>
+              </div>
+              <div class="grid-list">
+                <a href="#" class="img-box">
+                  <img
+                    src="./assets/images/IM20250729101810401240.jpg"
+                    alt="특별혜택"
+                  />
+                  <article class="grid-text">
+                    <p class="title">해외유명브랜드 장르 특별혜택</p>
+                    <p class="des">01.01(월)-12.31(화)</p>
+                  </article>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 섹션 슬라이드 : 3  -->
+      <div class="section-3 w-full h-full">
+        <div class="field-inner w-full h-full mx-auto">
+          <div class="field-header">
+            <h2 class="field-title">SPECIAL FIELD</h2>
+            <p class="field-text">스타필드 하남만의 특별한 공간</p>
+          </div>
+          <div class="field-item swiper">
+            <ul class="swiper-wrapper w-full">
+              <li class="swiper-slide swiper-slide-1">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swype_luxury.jpg"
+                    alt="해외명품브랜드"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-2">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField15.jpg"
+                    alt="모빌리티"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-3">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField11.png?v=1"
+                    alt="스몹"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-4">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField12.png?ver=1763516899000"
+                    alt="메가박스"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-5">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField14.png?v=1"
+                    alt="영풍문고"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-6">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField_fetpark.jpg?v=1"
+                    alt="펫파크"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-7">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField06.png"
+                    alt="토이킹덤"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-8">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField28.png"
+                    alt="몰리스펫샵"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-9">
+                <a href="#"
+                  ><img src="./assets/images/@img_swypeField08.png" alt="한샘"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-10">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField10.png"
+                    alt="아쿠아필드"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-11">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField01.png"
+                    alt="신세계백화점"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-12">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField02.png?v=1"
+                    alt="트레이더스 홀세일클럽"
+                /></a>
+              </li>
+              <li class="swiper-slide swiper-slide-13">
+                <a href="#"
+                  ><img
+                    src="./assets/images/@img_swypeField05.png"
+                    alt="일렉트로마트"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="field-btn-box">
+            <div class="swiper-btn-group">
+              <button class="swiper-button swiper-button-prev"></button>
+              <button class="swiper-button swiper-button-next"></button>
+            </div>
+            <button class="btnFieldPlay">
+              <span>
+                <i class="fa-solid fa-pause"></i>
+                <i class="fa-solid fa-play"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- 섹션 슬라이드 : 4  -->
+      <div class="section-4 w-full h-full">
+        <div class="best-inner w-full mx-auto">
+          <div class="best-header">
+            <h2 class="best-title">BEST CAMPAIGN</h2>
+            <p class="best-text">스타필드 대표 행사</p>
+          </div>
+          <div class="best-item swiper">
+            <ul class="swiper-wrapper">
+              <li class="swiper-slide swiper-slide-1">
+                <div class="slide-content">
+                  <img
+                    src="./assets/images/bestCampaign_main_01_01.jpg?ver=1763709228000"
+                    alt="대한민국 광고대상"
+                  />
+                  <div class="best-des">
+                    "스타필드, ‘세상에서 가장 큰아이’"<br />"대한민국 광고대상
+                    ‘대상’ 수상!"
+                  </div>
+                </div>
+              </li>
+              <li class="swiper-slide swiper-slide-2">
+                <div class="slide-content">
+                  <img
+                    src="./assets/images/bestCampaign_main_01_02.jpg?ver=1763709228000"
+                    alt="쓱데이 페스티벌"
+                  />
+                  <div class="best-des">
+                    "지금까지 이런 축제는 없었다!"<br />"스타필드 쓱데이
+                    페스티벌!"
+                  </div>
+                </div>
+              </li>
+              <li class="swiper-slide swiper-slide-3">
+                <div class="slide-content">
+                  <img
+                    src="./assets/images/bestCampaign_main_01_03.jpg?ver=1763710477000"
+                    alt="마스터스 대회"
+                  />
+                  <div class="best-des">
+                    "스타필드 하남, 국내 쇼핑몰 최초"<br />"‘LG U+ 3쿠션
+                    마스터스 대회’ 개최"
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="best-btn-box w-full">
+            <div class="best-btn-group">
+              <button class="swiper-button swiper-button-prev"></button>
+              <button class="swiper-button swiper-button-next"></button>
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="best-moreLink">
+            <a href="#" class="best-moreLink-btn">더보기</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 푸터	 -->
+      <footer id="footer">
+        <div class="inner">
+          <div class="footer-1 flex justify-between">
+            <div class="footer-1__left flex">
+              <h2 class="footer-header">
+                <div class="title">스타필드 하남</div>
+                <div class="address">경기도 하남시 미사대로 750</div>
+              </h2>
+              <ul class="footer-info flex">
+                <li class="info-box info">
+                  <a href="#" class="title">회사소개</a>
+                  <a href="#">신세계 프라퍼티</a>
+                  <a href="#" class="infor">터브먼 아시아</a>
+                </li>
+                <li class="info-box">
+                  <a href="#" class="title">협력사 상담</a>
+                  <a href="#">상담신청 및 입점 안내</a>
+                  <a href="#">공간 컨텐츠 제휴</a>
+                </li>
+                <li class="info-box info-call">
+                  <p class="title">대표전화</p>
+                  <span>1833-9001</span>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-1__right">
+              <div class="util-wrap flex items-center">
+                <div class="lan">
+                  <button class="lan-form flex items-center">KOREAN</button>
+                  <ul class="lan-list">
+                    <li>
+                      <a href="#">KOREAN</a>
+                    </li>
+                    <li>
+                      <a href="#">ENGLISH</a>
+                    </li>
+                    <li>
+                      <a href="#">CHINESE</a>
+                    </li>
+                    <li>
+                      <a href="#">JAPANESE</a>
+                    </li>
+                  </ul>
+                </div>
+                <ul class="social-link flex">
+                  <li>
+                    <a href="#" class="insta"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="youtube"> </a>
+                  </li>
+                  <li>
+                    <a href="#" class="blog"></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-2 flex">
+            <div class="guide">
+              <ul class="guide-list flex">
+                <li class="using">이용약관</li>
+                <li class="privacy">개인정보처리방침</li>
+                <li class="policy">영상정보처리기기 운영관리 방침</li>
+              </ul>
+              <span class="copyright"
+                >Copyrightⓒ2017 STARFIELD HANAM.All Rights Reserved</span
+              >
+              <div class="address-2">
+                경기도 하남시 미사대로 750 <br />ⓒ2017 STARFIELD HANAM.All
+                Rights Reserved
+              </div>
+            </div>
+            <div class="familiy-site flex">
+              <button class="family-list">패밀리 사이트</button>
+              <ul class="family-dropdown">
+                <li><a href="#">신세계 그룹</a></li>
+                <li><a href="#">신세계 백화점</a></li>
+                <li><a href="#">이마트</a></li>
+                <li><a href="#">SSG.COM</a></li>
+                <li><a href="#">이마트 에브리데이</a></li>
+                <li><a href="#">신세계 포인트</a></li>
+                <li><a href="#">신세계 면세점</a></li>
+                <li><a href="#">신세계 I&C</a></li>
+                <li><a href="#">신세계 건설</a></li>
+                <li><a href="#">신세계 푸드</a></li>
+                <li><a href="#">신세계 인터내셔날</a></li>
+                <li><a href="#">신세계사이먼</a></li>
+                <li><a href="#">스타벅스 커피 코리아</a></li>
+                <li><a href="#">조선호텔앤리조트</a></li>
+              </ul>
+            </div>
+            <div class="util-2 w-full items-center justify-center">
+              <div class="lan">
+                <button class="lan-form flex items-center">KOREAN</button>
+                <ul class="lan-list">
+                  <li>
+                    <a href="#">KOREAN</a>
+                  </li>
+                  <li>
+                    <a href="#">ENGLISH</a>
+                  </li>
+                  <li>
+                    <a href="#">CHINESE</a>
+                  </li>
+                  <li>
+                    <a href="#">JAPANESE</a>
+                  </li>
+                </ul>
+              </div>
+              <ul class="social-link flex">
+                <li>
+                  <a href="#" class="insta"> </a>
+                </li>
+                <li>
+                  <a href="#" class="youtube"> </a>
+                </li>
+                <li>
+                  <a href="#" class="blog"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- 퀵메뉴 -->
+      <article class="quickMenuList fixed">
+        <ul class="main-menu">
+          <li>
+            <a href="#">
+              <span class="icon-floor"></span>
+              <span class="quick-text">층별안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon-map"></span>
+              <span class="quick-text">오시는길</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon-youtube"></span>
+              <span class="quick-text">스타필드 유튜브</span>
+            </a>
+          </li>
+        </ul>
+        <button class="btnTop">TOP</button>
+      </article>
+    </div>
+  </body>
+</html>
