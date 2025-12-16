@@ -1475,8 +1475,11 @@ a {
     text-align: left;
     font-size: 1.2rem;
   }
+  .footer-2 .familiy-site .family-dropdown {
+    max-height: 200px;
+  }
   .footer-2 .familiy-site .family-dropdown li a {
-    padding: 0.4rem 1rem !important;
+    padding: 0.3rem 0.8rem !important;
     font-size: 1.2rem;
   }
   .footer-2 .util-2 {
@@ -1573,12 +1576,13 @@ a {
 @media (max-width: 550px) {
   .footer-1 .footer-info .info-box a {
     font-size: 0.9rem !important;
+    padding-inline: 0.7rem;
   }
   .footer-1 .footer-info .info-box a:not(.title) {
     padding-inline: 10px !important;
   }
   .footer-2 .guide {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   .footer-2 .guide .guide-list {
     margin-bottom: 1.3rem !important;
@@ -1590,14 +1594,16 @@ a {
     padding-inline: 0.7rem;
   }
   .footer-2 .familiy-site .family-list {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     padding-left: 13px !important;
     width: 12rem !important;
     height: 43px !important;
     text-align: left;
   }
   .footer-2 .familiy-site .family-dropdown li a {
-    font-size: 1rem;
+    padding: 0.25rem 0.6rem !important;
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
   .footer-2 .util-2 .social-link {
     position: relative;
@@ -1653,13 +1659,13 @@ a {
   padding: 0.6rem 0 0.8rem;
 }
 .quickMenuList a .icon-floor {
-  background-image: url(../assets/images/icon_floor.png);
+  background-image: url(https://www.starfield.co.kr/images/icon/icon_Quickmenu01.png);
 }
 .quickMenuList a .icon-map {
-  background-image: url(../assets/images/icon_map.png);
+  background-image: url(https://www.starfield.co.kr/images/icon/icon_Quickmenu02.png);
 }
 .quickMenuList a .icon-youtube {
-  background-image: url(../assets/images/icon_youtube.png);
+  background-image: url(https://www.starfield.co.kr/images/icon/icon_Quickmenu06.png);
 }
 .quickMenuList .btnTop {
   display: flex;
@@ -1680,7 +1686,7 @@ a {
   width: 100%;
   height: 0.8rem;
   margin-bottom: 0.4rem;
-  background-image: url(../assets/images/icon_top.png);
+  background-image: url(https://www.starfield.co.kr/images/icon/icon_Quickup.png);
   background-repeat: no-repeat;
   background-position: center center;
 }
