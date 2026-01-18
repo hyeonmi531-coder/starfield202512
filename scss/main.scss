@@ -412,7 +412,9 @@ a {
       visibility: visible;
       max-height: 0;
       transform: translatey(10px);
-      transition: max-height 0.4s ease-in-out, opacity 0.2s ease;
+      transition:
+        max-height 0.4s ease-in-out,
+        opacity 0.2s ease;
 
       /* 메가메뉴 내용 가운데 정렬 */
       .mega-inner {
@@ -563,7 +565,9 @@ a {
       visibility: visible;
       max-height: 0;
       transform: translateY(0);
-      transition: max-height 0.8s ease-in-out, opacity 0.2s ease;
+      transition:
+        max-height 0.8s ease-in-out,
+        opacity 0.2s ease;
 
       /* 메가메뉴 내용 가운데 정렬 */
       .mega-inner {
@@ -626,7 +630,9 @@ a {
 }
 
 .header-top-bar {
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }
 
 .header-top-bar.hide {
@@ -729,16 +735,22 @@ a {
 
   .swiper {
     display: block;
-    width: 100%;
     text-align: left;
   }
 
   .swiper-slide {
     position: relative;
     display: flex;
+    width: 100%;
+    height: 40rem;
     cursor: pointer;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 1200px) {
+      margin-top: 3rem;
+      height: 35rem;
+    }
 
     a {
       display: block;
@@ -751,6 +763,7 @@ a {
       height: 100%;
       width: 100%;
       object-fit: cover;
+      object-position: left center;
     }
   }
 
@@ -1068,7 +1081,6 @@ a {
     align-items: center;
     justify-content: flex-start;
     padding: 4rem 0;
-    aspect-ratio: 16 / 9;
 
     .field-header {
       width: 100%;
@@ -1284,7 +1296,9 @@ a {
       .swiper-wrapper {
         .swiper-slide {
           transform: scale(0.9);
-          transition: transform 0.3s, opacity 0.3s;
+          transition:
+            transform 0.3s,
+            opacity 0.3s;
 
           @media (max-width: 768px) {
             width: 80vw;
@@ -1474,7 +1488,9 @@ a {
         transform: translateY(0);
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.6s, transform 0.6s ease;
+        transition:
+          max-height 0.6s,
+          transform 0.6s ease;
         z-index: 70;
 
         li a {
@@ -1583,7 +1599,9 @@ a {
         z-index: 10;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 1s, transform 1s ease;
+        transition:
+          max-height 1s,
+          transform 1s ease;
 
         li {
           a {
@@ -1791,7 +1809,9 @@ a {
           z-index: 10;
           max-height: 0;
           overflow: hidden;
-          transition: max-height 1.5s, transform 1.5s ease;
+          transition:
+            max-height 1.5s,
+            transform 1.5s ease;
 
           li {
             a {

@@ -609,15 +609,22 @@ a {
 }
 .section-1 .swiper {
   display: block;
-  width: 100%;
   text-align: left;
 }
 .section-1 .swiper-slide {
   position: relative;
   display: flex;
+  width: 100%;
+  height: 40rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 1200px) {
+  .section-1 .swiper-slide {
+    margin-top: 3rem;
+    height: 35rem;
+  }
 }
 .section-1 .swiper-slide a {
   display: block;
@@ -630,6 +637,8 @@ a {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left center;
+     object-position: left center;
 }
 .section-1 .swiper-pagination-box {
   width: 310px;
@@ -908,7 +917,6 @@ a {
   align-items: center;
   justify-content: flex-start;
   padding: 4rem 0;
-  aspect-ratio: 16/9;
 }
 .section-3 .field-inner .field-header {
   width: 100%;
